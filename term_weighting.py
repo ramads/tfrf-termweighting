@@ -177,8 +177,7 @@ class TfRf_Transformer(BaseTranformer):
         c = np.bincount(X2.nonzero()[1], minlength=X2.shape[1])
         # replace 0 value in c to 1 == max(1,c)
         c[c == 0] = 1.0
-        # a = a+0.5
-        # c = c+0.5
+
         rf_ = a.astype(float)/c
         rf = np.log2(2 + rf_)
 
